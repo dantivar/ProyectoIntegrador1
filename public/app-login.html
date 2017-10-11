@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<link rel="import" href="bower_components/polymerfire/firebase-app.html">
+
+<dom-module id="app-login">
+	<template> 
+		<h1> RIMA </h1>
+		<div class='container'>
+			<input type="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" 	id="usr">
+			<input type="password" class="form-control" placeholder="Password" id="pwd">
+			<button on-click="logIn">Entrar</button>
+		</div>
+	</template>
+	<script>
+		Polymer({
+			is: 'app-login',
+			ready: function(){
+				const config = {
+					apiKey: "AIzaSyBmSeRTYbYqMLwJGzk-urpuMzEcQqmcT4Q",
+				    authDomain: "rima-67b88.firebaseapp.com",
+				    databaseURL: "https://rima-67b88.firebaseio.com",
+				};
+				firebase.initializeApp(config);
+			},
+			logIn: function(){
+				let usr = this.$.usr.value;
+				let pwd = this.$.pwd.value;
+				const auth = firebase.auth();
+				firebase.auth().signInWithEmailAndPassword(usr, pwd)
+				.then(function(user){
+					window.location.replace("app-reserva.html");
+					let packed = usr;
+					window.location = "app-reserva.html?" + packed;
+				}).catch(function(error) {
+				    var errorCode = error.code;
+				    var errorMessage = error.message;
+
+				    if (errorCode === 'auth/wrong-password') {
+				        alert('Wrong password.');
+				    } else {
+				        alert(errorMessage);         
+				    }
+				    console.log(error);
+				});
+			}
+      	});
+	</script>
+</dom-module>
+
+<!-- TODO: Usar paper-tabs para la app? iron-pages?-->

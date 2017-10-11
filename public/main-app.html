@@ -1,0 +1,23 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="reserva-app">
+<link rel="import" href="bower_components/iron-pages/iron-pages.html">
+<dom-module id="main-app">
+<template>
+	<iron-pages selected="0">
+		<reserva-app></reserva-app>
+	</iron-pages>
+</template>
+<script>
+	Polymer({
+		is: 'main-app'
+	});
+</script>
+</dom-module>
+<!--
+	<app-drawer>
+	  <app-toolbar>Menu</app-toolbar>
+	  <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+	    <a name="reserva-app" href="/reserva-app">View One</a>
+	  </iron-selector>
+	</app-drawer>
+	-->
