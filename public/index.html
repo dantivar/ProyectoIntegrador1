@@ -4,18 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
     <title>RIMA</title>
+    <!-- Import de el manifiesto, de webcomponentsjs que hace parte de Polymer y del
+    module que se usara como inicial -->
     <link rel="manifest" href="manifest.json">
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="bower_components/polymerfire/firebase-app.html">
-    <link rel="import" href="rima-app.html">
+    <link rel="import" href="app-login.html">
   </head>
   <body>
+    <!--inicializacion de firebase usando Polymerfire-->
   <firebase-app
     name="rima"
     apiKey= "AIzaSyBmSeRTYbYqMLwJGzk-urpuMzEcQqmcT4Q"
     authDomain= "rima-67b88.firebaseapp.com"
     databaseURL= "https://rima-67b88.firebaseio.com">
   </firebase-app>
+  <!-- Llamado al module-->
   <app-login></app-login>
   </body>
 </html>

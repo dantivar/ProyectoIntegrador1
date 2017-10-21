@@ -1,15 +1,17 @@
+<!--import de bootstrap y polymerfire-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-<link rel="import" href="bower_components/polymerfire/firebase-app.html">
 
 <dom-module id="app-login">
-	<template> 
+	<template>
 		<h1> RIMA </h1>
+		<!--Contenedor del formulario de inicio de sesion-->
 		<div class='container'>
 			<input type="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" 	id="usr">
 			<input type="password" class="form-control" placeholder="Password" id="pwd">
 			<button on-click="logIn">Entrar</button>
 		</div>
 	</template>
+	<!-- Definicion del script que contiene las funciones que usara la app-->
 	<script>
 		Polymer({
 			is: 'app-login',
@@ -27,9 +29,9 @@
 				const auth = firebase.auth();
 				firebase.auth().signInWithEmailAndPassword(usr, pwd)
 				.then(function(user){
-					window.location.replace("app-reserva.html");
+					window.location.replace("main-app.html");
 					let packed = usr;
-					window.location = "app-reserva.html?" + packed;
+					window.location = "main-app.html?" + packed;
 				}).catch(function(error) {
 				    var errorCode = error.code;
 				    var errorMessage = error.message;
@@ -37,7 +39,7 @@
 				    if (errorCode === 'auth/wrong-password') {
 				        alert('Wrong password.');
 				    } else {
-				        alert(errorMessage);         
+				        alert(errorMessage);
 				    }
 				    console.log(error);
 				});
