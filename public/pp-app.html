@@ -5,13 +5,20 @@
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
           <title>RIMA</title>
           <link rel="stylesheet" href="style.css">
+          <script src="index.js"></script>
      </head>
      <body>
           <div id="mySidenav" class="sidenav">
-            <a href="#">Reserva</a>
-            <a href="#">Prestamo</a>
-            <a href="#">Mis Colas</a>
-            <a href="#">Configuracion</a>
-          </div>
+            <a href="#1" onclick="revelar(1)">Reservas</a>
+            <a href="#2" onclick="revelar(2)">Prestamos</a>
+            <a href="#3" onclick="revelar(3)">Mis Colas</a>
+            <a href="#4" onclick="revelar(4)">Configuracion</a>
+       </div>
+       <center>
+                 <h1 class="oculto" id="1">Reservas</h1>
+                 <h1 class="oculto" id="2">Prestamos</h1>
+                 <h1 class="oculto" id="3">Colas</h1>
+                 <h1 class="oculto" id="4">Configuracion</h1>
+       </center>
      </body>
 </html>

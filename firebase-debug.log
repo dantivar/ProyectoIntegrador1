@@ -1,36 +1,28 @@
-[debug] [2017-10-29T03:39:15.467Z] ----------------------------------------------------------------------
-[debug] [2017-10-29T03:39:15.470Z] Command:       /usr/bin/node /usr/bin/firebase serve
-[debug] [2017-10-29T03:39:15.470Z] CLI Version:   3.13.1
-[debug] [2017-10-29T03:39:15.470Z] Platform:      linux
-[debug] [2017-10-29T03:39:15.470Z] Node Version:  v6.11.5
-[debug] [2017-10-29T03:39:15.470Z] Time:          Sat Oct 28 2017 22:39:15 GMT-0500 (-05)
-[debug] [2017-10-29T03:39:15.470Z] ----------------------------------------------------------------------
+[debug] [2017-10-29T22:13:12.577Z] ----------------------------------------------------------------------
+[debug] [2017-10-29T22:13:12.580Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2017-10-29T22:13:12.580Z] CLI Version:   3.13.1
+[debug] [2017-10-29T22:13:12.580Z] Platform:      linux
+[debug] [2017-10-29T22:13:12.580Z] Node Version:  v6.11.5
+[debug] [2017-10-29T22:13:12.580Z] Time:          Sun Oct 29 2017 17:13:12 GMT-0500 (-05)
+[debug] [2017-10-29T22:13:12.581Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2017-10-29T03:39:15.481Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-10-29T03:39:15.481Z] > authorizing via signed-in user
-[debug] [2017-10-29T03:39:15.483Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2017-10-29T03:39:15.483Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/ksy0fPJm3SVLEZjjZpQKi0wpBynbOPJwOnUvBb2nsGs',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Sat Oct 28 2017 22:39:15 GMT-0500 (-05)
-[debug] [2017-10-29T03:39:15.884Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-29T03:39:15.937Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/rima-67b88  
- Sat Oct 28 2017 22:39:15 GMT-0500 (-05)
-[debug] [2017-10-29T03:39:16.966Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-29T03:39:16.967Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/rima-67b88/tokens  
- Sat Oct 28 2017 22:39:16 GMT-0500 (-05)
-[debug] [2017-10-29T03:39:17.891Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-29T22:13:12.592Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-29T22:13:12.592Z] > authorizing via signed-in user
+[debug] [2017-10-29T22:13:12.594Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/rima-67b88  
+ Sun Oct 29 2017 17:13:12 GMT-0500 (-05)
+[debug] [2017-10-29T22:13:13.463Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-29T22:13:13.464Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/rima-67b88/tokens  
+ Sun Oct 29 2017 17:13:13 GMT-0500 (-05)
+[debug] [2017-10-29T22:13:14.646Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/home/duvan/Escritorio/pi1'...
 [info] 
-[debug] [2017-10-29T03:39:17.895Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/rima-67b88  
- Sat Oct 28 2017 22:39:17 GMT-0500 (-05)
-[debug] [2017-10-29T03:39:18.636Z] <<< HTTP RESPONSE 200
-[debug] [2017-10-29T03:39:18.637Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/5467516607/clients/_:getWebAppConfig  
- Sat Oct 28 2017 22:39:18 GMT-0500 (-05)
-[debug] [2017-10-29T03:39:19.302Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-29T22:13:14.649Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/rima-67b88  
+ Sun Oct 29 2017 17:13:14 GMT-0500 (-05)
+[debug] [2017-10-29T22:13:15.369Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-29T22:13:15.370Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/5467516607/clients/_:getWebAppConfig  
+ Sun Oct 29 2017 17:13:15 GMT-0500 (-05)
+[debug] [2017-10-29T22:13:16.114Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] ✔  hosting: Local server: http://localhost:5000
 
