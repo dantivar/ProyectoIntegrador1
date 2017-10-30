@@ -1,3 +1,5 @@
+/*jshint esversion: 6*/
+
 const config = {
      apiKey: "AIzaSyBmSeRTYbYqMLwJGzk-urpuMzEcQqmcT4Q",
      authDomain: "rima-67b88.firebaseapp.com",
@@ -30,17 +32,16 @@ function redirigir(page, packed) {
      window.location = page + "?" + packed;
 }
 
-function revelar(id){
-     ocultar(id);
-     let element = document.getElementById(id);
-     element.style.display = "block";
-}
 
-function ocultar(id){
-     for (var i = 1; i < 5; i++) {
-          if (i!=id){
-               let element = document.getElementById(i);
-               element.style.display="none";
-          }
-     }
+//var userId = firebase.auth().currentUser.uid;
+//return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+//  var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+//});
+
+function writeUserData(userId, name, email, imageUrl) {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture : imageUrl
+  });
 }

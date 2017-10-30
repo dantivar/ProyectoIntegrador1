@@ -1,23 +1,23 @@
 /* Menu de navegacion lateral */
 .sidenav {
-   height: 100%; /* Toda la pantalla vertical */
-   width: 170px; /* Ancho de el menu */
-   position: fixed; /* Quieto en un lugar */
-   z-index: 1; /* Quieto en la parte superior */
-   top: 0;
-   left: 0;
-   background-color: #236494; /* Fondo*/
-   overflow-x: hidden; /* Desactiva el scroll */
-   padding-top: 60px; /* Distancia de la parte superior */
+     background-color: #236494; /* Fondo*/
+     height: 100%; /* Toda la pantalla vertical */
+     left: 0;
+     overflow-x: hidden; /* Desactiva el scroll */
+     padding-top: 60px; /* Distancia de la parte superior */
+     position: fixed; /* Quieto en un lugar */
+     top: 0;
+     width: 170px; /* Ancho de el menu */
+     z-index: 1; /* Quieto en la parte superior */
 }
 
 /* Links del menu */
 .sidenav a {
-   padding: 8px 8px 8px 20px;
-   text-decoration: none;
-   font-size: 20px;
-   color: #FFFFFF;
-   transition: 0.3s
+     color: #FFFFFF;
+     font-size: 20px;
+     padding: 8px 8px 8px 20px;
+     text-decoration: none;
+     transition: 0.3s
 }
 
 /* Cambiar el color de los links al pasar el mouse por encima */
@@ -31,6 +31,9 @@
    .sidenav a {font-size: 18px;}
 }
 
-h1.oculto{
+.oculto{
      display: none;
+}
+.topx{
+     margin-top: 15%;
 }

@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
      <head>
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-          <title>RIMA</title>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+          <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+          <script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
+          <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+          <script type="text/javascript" src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+          <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+          <link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
           <link rel="stylesheet" href="style.css">
-          <script src="index.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-database.js"></script>
+          <script src="pp-app.js"></script>
+          <title>RIMA</title>
+          <style media="screen">
+               div.container{
+                    display: none;
+               }
+          </style>
      </head>
      <body>
           <div id="mySidenav" class="sidenav">
@@ -13,12 +25,37 @@
             <a href="#2" onclick="revelar(2)">Prestamos</a>
             <a href="#3" onclick="revelar(3)">Mis Colas</a>
             <a href="#4" onclick="revelar(4)">Configuracion</a>
-       </div>
-       <center>
-                 <h1 class="oculto" id="1">Reservas</h1>
-                 <h1 class="oculto" id="2">Prestamos</h1>
-                 <h1 class="oculto" id="3">Colas</h1>
-                 <h1 class="oculto" id="4">Configuracion</h1>
-       </center>
+          </div>
+       <div class="container" id="1">
+               <div class="row justify-content-md-center topx">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <div class="input-group date" id="datetimepicker1">
+                                <input type="text" class="form-control" />
+                                <span class="input-group-addon">
+                                   <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            $('#datetimepicker1').datetimepicker();
+                        });
+                    </script>
+               </div>
+                    <div class="col-md-3">
+                         <div class="dropdown">
+                           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             Aula
+                           </button>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="listaAulas">
+                           </div>
+                         </div>
+                    </div>
+          </div>
+     </div>
+     <h1 id="2"></h1>
+          <h1 id="3"></h1>
+          <h1 id="4"></h1>
      </body>
 </html>
