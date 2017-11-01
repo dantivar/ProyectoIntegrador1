@@ -8,16 +8,21 @@ const config = {
 firebase.initializeApp(config);
 
 document.addEventListener("DOMContentLoaded", function(event) {
-     firebase.database().ref('/aulas/').once('value').then(function(snapshot){
-          snapshot = snapshot.val();
-          let arrk = Object.keys(snapshot);
-          console.log(arrk);
-          for (var i = 0; i < arrk.length; i++) {
-                    document.getElementById('sel').innerHTML += '<option>' + arrk[i] + '</option>';
-          }
-     });
+  leer('/aulas/', 'sel1');
+  leer('/objetos/', 'sel2');
 });
 
+function leer(tipo, id) {
+  firebase.database().ref(tipo).once('value').then(function(snapshot){
+       snapshot = snapshot.val();
+       console.log(snapshot);
+       let arrk = Object.keys(snapshot);
+       for (var i = 0; i < arrk.length; i++) {
+                 document.getElementById(id).innerHTML += '<option>' + arrk[i] + '</option>';
+       }
+  });
+}
+/*
 function revelar(id){
      ocultar(id);
      let element = document.getElementById(id);
@@ -32,3 +37,4 @@ function ocultar(id){
           }
      }
 }
+ */

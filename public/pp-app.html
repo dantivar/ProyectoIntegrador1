@@ -13,11 +13,6 @@
           <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-database.js"></script>
           <script src="pp-app.js"></script>
           <title>RIMA</title>
-          <style media="screen">
-               div.container{
-                    display: none;
-               }
-          </style>
      </head>
      <body style="overflow: hidden;">
           <div id="mySidenav" class="sidenav">
@@ -39,31 +34,35 @@
                         </div>
                </div>
                     <div class="col-md-3">
-                         <select class="selectpicker" data-style="btn-primary" id="sel">
+                         <select class="selectpicker" data-style="btn-primary" id="sel1">
                            </select>
                     </div>
           </div>
      </div>
 
-     <div class="container" id="2" style="display:block; margin-top: 50%;">
+     <div class="container" id="2" style=" margin-top: 65%; margin-bottom: 65%">
        <div class="row justify-content-md-center topx">
-            <div class="col-md-3" style="margin-top: -50%;">
-                <div class="form-group">
-                    <div class="input-group date" id="datetimepicker2">
-                        <input type="text" class="form-control" />
-                        <span class="input-group-addon">
-                           <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
-                    </div>
-                </div>
-            <script type="text/javascript">
-                $(function () {
-                    $('#datetimepicker1').datetimepicker();
-                    $('#datetimepicker2').datetimepicker();
-                });
-            </script>
-       </div>
+         <div class="col-sm-6">
+         <div class="form-group">
+             <div class="input-group date" id="datetimepicker2">
+                 <input type="text" class="form-control" />
+                 <span class="input-group-addon">
+                     <span class="glyphicon glyphicon-time"></span>
+                 </span>
+             </div>
+         </div>
+     </div>
+            <div class="col-md-3">
+                 <select class="selectpicker" data-style="btn-primary" id="sel2">
+                   </select>
+            </div>
   </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#datetimepicker1').datetimepicker();
+          $('#datetimepicker2').datetimepicker({ format : 'LT'});
+      });
+  </script>
      </div>
           <h1 id="3"></h1>
           <h1 id="4"></h1>
