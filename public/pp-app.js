@@ -10,9 +10,11 @@ firebase.initializeApp(config);
 document.addEventListener("DOMContentLoaded", function(event) {
      firebase.database().ref('/aulas/').once('value').then(function(snapshot){
           snapshot = snapshot.val();
-          let arr = snapshot.keys();
-          document.getElementById('listaAulas').innerHTML = '<a class="dropdown-item">' + snapshot.val() + '</a>';
-          console.log(arr.next().value);
+          let arrk = Object.keys(snapshot);
+          console.log(arrk);
+          for (var i = 0; i < arrk.length; i++) {
+                    document.getElementById('sel').innerHTML += '<option>' + arrk[i] + '</option>';
+          }
      });
 });
 

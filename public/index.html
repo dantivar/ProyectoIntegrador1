@@ -3,20 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <title>Bienvenido a RIMA</title>
     <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-auth.js"></script>
-    <script src="index.js"></script>
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="login.css">
   </head>
-  <body>
-       <center>
-            <h1>RIMA</h1>
-            <div class="mx-auto" style="width: 200px;">
-            <input type="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" 	id="usr">
-            <input type="password" class="form-control" placeholder="Password" id="pwd">
-            <button onclick="logIn()">Entrar</button>
-            </div>
-       </center>
+  <body class="bg">
+    <form>
+      <div class="group">
+        <input type="text" id="usr"><span class="highlight"></span><span class="bar"></span>
+        <label>Usuario:</label>
+      </div>
+      <div class="group">
+        <input type="password" id="pwd"><span class="highlight"></span><span class="bar"></span>
+        <label>Clave:</label>
+      </div>
+      <button type="button" class="button buttonBlue" id="btn1">Entrar
+        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+      </button>
+    </form>
+        <script  src="login.js"></script>
   </body>
 </html>

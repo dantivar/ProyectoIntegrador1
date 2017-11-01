@@ -31,9 +31,18 @@
    .sidenav a {font-size: 18px;}
 }
 
-.oculto{
-     display: none;
-}
 .topx{
      margin-top: 15%;
+}
+
+.topx2{
+  margin-top: 100%;
+}
+
+.topx3{
+    margin-top: 200%;
+}
+
+.topx4{
+  margin-top: 300%;
 }
