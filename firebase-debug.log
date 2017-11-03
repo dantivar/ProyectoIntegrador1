@@ -1,0 +1,222 @@
+[debug] [2017-11-02T23:49:32.434Z] ----------------------------------------------------------------------
+[debug] [2017-11-02T23:49:32.437Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2017-11-02T23:49:32.437Z] CLI Version:   3.13.1
+[debug] [2017-11-02T23:49:32.437Z] Platform:      linux
+[debug] [2017-11-02T23:49:32.437Z] Node Version:  v6.11.5
+[debug] [2017-11-02T23:49:32.437Z] Time:          Thu Nov 02 2017 18:49:32 GMT-0500 (-05)
+[debug] [2017-11-02T23:49:32.437Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-02T23:49:32.450Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-02T23:49:32.450Z] > authorizing via signed-in user
+[debug] [2017-11-02T23:49:32.452Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/rima-67b88  
+ Thu Nov 02 2017 18:49:32 GMT-0500 (-05)
+[debug] [2017-11-02T23:49:33.179Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-02T23:49:33.180Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/rima-67b88/tokens  
+ Thu Nov 02 2017 18:49:33 GMT-0500 (-05)
+[debug] [2017-11-02T23:49:33.753Z] <<< HTTP RESPONSE 200
+[info] 2
+[info] 
+[info] === Deploying to 'rima-67b88'...
+[info] 
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2017-11-02T23:49:35.189Z] >>> HTTP REQUEST PUT https://rima-67b88.firebaseio.com/.settings/rules.json?dryRun=true {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+} 
+ Thu Nov 02 2017 18:49:35 GMT-0500 (-05)
+[debug] [2017-11-02T23:49:35.868Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax is valid
+[info] i  hosting: preparing public directory for upload...
+[debug] [2017-11-02T23:49:37.433Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/rima-67b88/uploads/-Kxz85eIG8r6lh6spZwa?fileCount=678&message=  
+ Thu Nov 02 2017 18:49:37 GMT-0500 (-05)
+[debug] [2017-11-02T23:49:43.979Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-02T23:49:43.979Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[info] ✔  hosting: 678 files uploaded successfully
+[info] i  database: releasing rules...
+[debug] [2017-11-02T23:49:49.048Z] >>> HTTP REQUEST PUT https://rima-67b88.firebaseio.com/.settings/rules.json {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+} 
+ Thu Nov 02 2017 18:49:49 GMT-0500 (-05)
+[debug] [2017-11-02T23:49:49.864Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules released successfully
+[debug] [2017-11-02T23:49:49.865Z] >>> HTTP REQUEST POST https://deploy.firebase.com/v1/projects/rima-67b88/releases { hosting: 
+   { public: 'public',
+     ignore: [ 'firebase.json', '**/.*', '**/node_modules/**' ],
+     version: '-Kxz85eIG8r6lh6spZwa',
+     prefix: '-Kxz85eIG8r6lh6spZwa/',
+     manifest: [] } } 
+ Thu Nov 02 2017 18:49:49 GMT-0500 (-05)
+[debug] [2017-11-02T23:49:56.343Z] <<< HTTP RESPONSE 200
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/rima-67b88/overview
+[info] Hosting URL: https://rima-67b88.firebaseapp.com
+[debug] [2016-07-28T05:05:46.081Z] ----------------------------------------------------------------------
+[debug] [2016-07-28T05:05:46.085Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2016-07-28T05:05:46.085Z] CLI Version:   3.13.1
+[debug] [2016-07-28T05:05:46.085Z] Platform:      linux
+[debug] [2016-07-28T05:05:46.085Z] Node Version:  v6.11.5
+[debug] [2016-07-28T05:05:46.085Z] Time:          Thu Jul 28 2016 00:05:46 GMT-0500 (-05)
+[debug] [2016-07-28T05:05:46.085Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2016-07-28T05:05:46.160Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2016-07-28T05:05:46.160Z] > authorizing via signed-in user
+[debug] [2016-07-28T05:05:46.163Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/rima-67b88  
+ Thu Jul 28 2016 00:05:46 GMT-0500 (-05)
+[debug] [2016-07-28T05:05:47.097Z] Error: certificate is not yet valid
+    at Error (native)
+    at TLSSocket.<anonymous> (_tls_wrap.js:1092:38)
+    at emitNone (events.js:86:13)
+    at TLSSocket.emit (events.js:185:7)
+    at TLSSocket._finishInit (_tls_wrap.js:610:8)
+    at TLSWrap.ssl.onhandshakedone (_tls_wrap.js:440:38)
+[error] 
+[error] Error: Server Error. certificate is not yet valid
+[debug] [2016-07-28T05:07:55.123Z] ----------------------------------------------------------------------
+[debug] [2016-07-28T05:07:55.125Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2016-07-28T05:07:55.126Z] CLI Version:   3.13.1
+[debug] [2016-07-28T05:07:55.126Z] Platform:      linux
+[debug] [2016-07-28T05:07:55.126Z] Node Version:  v6.11.5
+[debug] [2016-07-28T05:07:55.126Z] Time:          Thu Jul 28 2016 00:07:55 GMT-0500 (-05)
+[debug] [2016-07-28T05:07:55.126Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2016-07-28T05:07:55.137Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2016-07-28T05:07:55.137Z] > authorizing via signed-in user
+[debug] [2016-07-28T05:07:55.139Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/rima-67b88  
+ Thu Jul 28 2016 00:07:55 GMT-0500 (-05)
+[debug] [2016-07-28T05:07:59.173Z] Error: certificate is not yet valid
+    at Error (native)
+    at TLSSocket.<anonymous> (_tls_wrap.js:1092:38)
+    at emitNone (events.js:86:13)
+    at TLSSocket.emit (events.js:185:7)
+    at TLSSocket._finishInit (_tls_wrap.js:610:8)
+    at TLSWrap.ssl.onhandshakedone (_tls_wrap.js:440:38)
+[error] 
+[error] Error: Server Error. certificate is not yet valid
+[debug] [2016-07-28T05:08:03.032Z] ----------------------------------------------------------------------
+[debug] [2016-07-28T05:08:03.035Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2016-07-28T05:08:03.035Z] CLI Version:   3.13.1
+[debug] [2016-07-28T05:08:03.035Z] Platform:      linux
+[debug] [2016-07-28T05:08:03.035Z] Node Version:  v6.11.5
+[debug] [2016-07-28T05:08:03.035Z] Time:          Thu Jul 28 2016 00:08:03 GMT-0500 (-05)
+[debug] [2016-07-28T05:08:03.035Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2016-07-28T05:08:03.046Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2016-07-28T05:08:03.046Z] > authorizing via signed-in user
+[debug] [2016-07-28T05:08:03.048Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/rima-67b88  
+ Thu Jul 28 2016 00:08:03 GMT-0500 (-05)
+[debug] [2016-07-28T05:08:03.835Z] Error: certificate is not yet valid
+    at Error (native)
+    at TLSSocket.<anonymous> (_tls_wrap.js:1092:38)
+    at emitNone (events.js:86:13)
+    at TLSSocket.emit (events.js:185:7)
+    at TLSSocket._finishInit (_tls_wrap.js:610:8)
+    at TLSWrap.ssl.onhandshakedone (_tls_wrap.js:440:38)
+[error] 
+[error] Error: Server Error. certificate is not yet valid
+[debug] [2016-07-28T05:08:08.443Z] ----------------------------------------------------------------------
+[debug] [2016-07-28T05:08:08.446Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2016-07-28T05:08:08.446Z] CLI Version:   3.13.1
+[debug] [2016-07-28T05:08:08.446Z] Platform:      linux
+[debug] [2016-07-28T05:08:08.446Z] Node Version:  v6.11.5
+[debug] [2016-07-28T05:08:08.446Z] Time:          Thu Jul 28 2016 00:08:08 GMT-0500 (-05)
+[debug] [2016-07-28T05:08:08.446Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2016-07-28T05:08:08.457Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2016-07-28T05:08:08.458Z] > authorizing via signed-in user
+[debug] [2016-07-28T05:08:08.460Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/rima-67b88  
+ Thu Jul 28 2016 00:08:08 GMT-0500 (-05)
+[debug] [2016-07-28T05:08:11.588Z] Error: certificate is not yet valid
+    at Error (native)
+    at TLSSocket.<anonymous> (_tls_wrap.js:1092:38)
+    at emitNone (events.js:86:13)
+    at TLSSocket.emit (events.js:185:7)
+    at TLSSocket._finishInit (_tls_wrap.js:610:8)
+    at TLSWrap.ssl.onhandshakedone (_tls_wrap.js:440:38)
+[error] 
+[error] Error: Server Error. certificate is not yet valid
+[debug] [2016-07-28T05:08:46.591Z] ----------------------------------------------------------------------
+[debug] [2016-07-28T05:08:46.593Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2016-07-28T05:08:46.594Z] CLI Version:   3.13.1
+[debug] [2016-07-28T05:08:46.594Z] Platform:      linux
+[debug] [2016-07-28T05:08:46.594Z] Node Version:  v6.11.5
+[debug] [2016-07-28T05:08:46.594Z] Time:          Thu Jul 28 2016 00:08:46 GMT-0500 (-05)
+[debug] [2016-07-28T05:08:46.594Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2016-07-28T05:08:46.605Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2016-07-28T05:08:46.605Z] > authorizing via signed-in user
+[debug] [2016-07-28T05:08:46.608Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/rima-67b88  
+ Thu Jul 28 2016 00:08:46 GMT-0500 (-05)
+[debug] [2016-07-28T05:08:48.193Z] Error: certificate is not yet valid
+    at Error (native)
+    at TLSSocket.<anonymous> (_tls_wrap.js:1092:38)
+    at emitNone (events.js:86:13)
+    at TLSSocket.emit (events.js:185:7)
+    at TLSSocket._finishInit (_tls_wrap.js:610:8)
+    at TLSWrap.ssl.onhandshakedone (_tls_wrap.js:440:38)
+[error] 
+[error] Error: Server Error. certificate is not yet valid
+[debug] [2016-07-28T05:09:08.813Z] ----------------------------------------------------------------------
+[debug] [2016-07-28T05:09:08.815Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2016-07-28T05:09:08.816Z] CLI Version:   3.13.1
+[debug] [2016-07-28T05:09:08.816Z] Platform:      linux
+[debug] [2016-07-28T05:09:08.816Z] Node Version:  v6.11.5
+[debug] [2016-07-28T05:09:08.816Z] Time:          Thu Jul 28 2016 00:09:08 GMT-0500 (-05)
+[debug] [2016-07-28T05:09:08.816Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2016-07-28T05:09:08.827Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2016-07-28T05:09:08.827Z] > authorizing via signed-in user
+[debug] [2016-07-28T05:09:08.829Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/rima-67b88  
+ Thu Jul 28 2016 00:09:08 GMT-0500 (-05)
+[debug] [2016-07-28T05:09:09.560Z] Error: certificate is not yet valid
+    at Error (native)
+    at TLSSocket.<anonymous> (_tls_wrap.js:1092:38)
+    at emitNone (events.js:86:13)
+    at TLSSocket.emit (events.js:185:7)
+    at TLSSocket._finishInit (_tls_wrap.js:610:8)
+    at TLSWrap.ssl.onhandshakedone (_tls_wrap.js:440:38)
+[error] 
+[error] Error: Server Error. certificate is not yet valid
+[debug] [2017-11-03T03:32:10.724Z] ----------------------------------------------------------------------
+[debug] [2017-11-03T03:32:10.726Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2017-11-03T03:32:10.727Z] CLI Version:   3.13.1
+[debug] [2017-11-03T03:32:10.727Z] Platform:      linux
+[debug] [2017-11-03T03:32:10.727Z] Node Version:  v6.11.5
+[debug] [2017-11-03T03:32:10.727Z] Time:          Thu Nov 02 2017 22:32:10 GMT-0500 (-05)
+[debug] [2017-11-03T03:32:10.727Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-03T03:32:10.738Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-03T03:32:10.738Z] > authorizing via signed-in user
+[debug] [2017-11-03T03:32:10.740Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-11-03T03:32:10.740Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/ksy0fPJm3SVLEZjjZpQKi0wpBynbOPJwOnUvBb2nsGs',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Nov 02 2017 22:32:10 GMT-0500 (-05)
+[debug] [2017-11-03T03:32:11.163Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-03T03:32:11.212Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/rima-67b88  
+ Thu Nov 02 2017 22:32:11 GMT-0500 (-05)
+[debug] [2017-11-03T03:32:11.921Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-03T03:32:11.925Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/rima-67b88/tokens  
+ Thu Nov 02 2017 22:32:11 GMT-0500 (-05)
+[debug] [2017-11-03T03:32:13.474Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/duvan/Escritorio/pi1'...
+[info] 
+[debug] [2017-11-03T03:32:13.478Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/rima-67b88  
+ Thu Nov 02 2017 22:32:13 GMT-0500 (-05)
+[debug] [2017-11-03T03:32:16.681Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-03T03:32:16.682Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/5467516607/clients/_:getWebAppConfig  
+ Thu Nov 02 2017 22:32:16 GMT-0500 (-05)
+[debug] [2017-11-03T03:32:17.744Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+

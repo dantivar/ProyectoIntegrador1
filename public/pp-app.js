@@ -9,6 +9,7 @@ firebase.initializeApp(config);
 
 let usr = '';
 let nR = 0;
+
 document.addEventListener("DOMContentLoaded", function(event) {
   leer('/aulas/', 'sel1');
   leer('/objetos/', 'sel2');
@@ -25,10 +26,11 @@ function leer(tipo, id) {
   });
 }
 
-function intermediario(id, tipo) {
+function intermediario(tipo) {
   id = usr;
-  firebase.database().ref('/usuarios/'+ id + '/'+ tipo +'/numeroDe' +tipo+ '/').once('value').then(function(snapshot){
+  firebase.database().ref('/usuarios/'+ id + '/numeroDe' +tipo+ '/').once('value').then(function(snapshot){
       if(tipo==='reserva'){
+        console.log(snapshot.val());
         reservar(id,snapshot.val())
       } else if (tipo==='prestamo') {
 
@@ -36,33 +38,42 @@ function intermediario(id, tipo) {
   });
 }
 
-function reservar(usr,nR) {
+function reservar() {
+  let id = usr;
   let aulaV = document.getElementById('sel1').value;
   let fechaV = $('#datetimepicker1').data('DateTimePicker').date()._i.substring(0,10);
   let horaV = $('#datetimepicker1').data('DateTimePicker').date()._i.substring(11,19);
   nR+=1;
 
+  let numero = 'reserva' + nR;
   var updates = {};
-
-  firebase.database().ref('/usuarios/' + usr + '/reserva/reserva' + nR).set({
+  updates['/usuarios/' + id + '/reserva/'] = {
     aula : aulaV,
     fecha : fechaV,
     hora : horaV
-  });
+  };
+
+  firebase.database().ref().update(updates);
 }
 
 
 
 function prestar() {
-  let aulaV = document.getElementById('sel1').value;
-  let fechaV = $('#datetimepicker1').data('DateTimePicker').date()._i.substring(0,10);
-  let horaV = $('#datetimepicker1').data('DateTimePicker').date()._i.substring(11,19);
-  nR+=1;
-  firebase.database().ref('/usuarios/' + usr + '/reserva/reserva' + nR).set({
-    aula : aulaV,
-    fecha : fechaV,
+  let id = usr;
+  let objetoV = document.getElementById('sel2').value;
+  let horaV = $('#datetimepicker2').data('DateTimePicker').date()._i;
+  console.log(horaV);
+  var updates = {};
+  updates['/usuarios/' + id + '/prestamo/'] = {
+    objeto : objetoV,
     hora : horaV
-  });
+  };
+
+  updates['/objetos/'] = {
+    Guitarra : 0
+  };
+  
+  firebase.database().ref().update(updates);
 }
 
 function cargarUsr() {
