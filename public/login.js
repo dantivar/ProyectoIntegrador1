@@ -36,14 +36,7 @@ $(window, document, undefined).ready(function() {
 
 });
 
-const config = {
-     apiKey: "AIzaSyBmSeRTYbYqMLwJGzk-urpuMzEcQqmcT4Q",
-     authDomain: "rima-67b88.firebaseapp.com",
-     databaseURL: "https://rima-67b88.firebaseio.com",
-     };
-
-firebase.initializeApp(config);
-
+/**
 document.getElementById('btn1').addEventListener("click", function () {
   let usr = document.getElementById('usr').value;
   let pwd = document.getElementById('pwd').value;
@@ -68,3 +61,4 @@ function redirigir(page, packed) {
      window.location.replace(page);
      window.location = page + "?" + packed;
 }
+**/

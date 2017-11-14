@@ -1,15 +1,5 @@
 /*jshint esversion:6*/
-const config = {
-     apiKey: "AIzaSyBmSeRTYbYqMLwJGzk-urpuMzEcQqmcT4Q",
-     authDomain: "rima-67b88.firebaseapp.com",
-     databaseURL: "https://rima-67b88.firebaseio.com",
-     };
-
-firebase.initializeApp(config);
-
-let usr = '';
-let nR = 0;
-
+/**
 document.addEventListener("DOMContentLoaded", function(event) {
   leer('/aulas/', 'sel1');
   leer('/objetos/', 'sel2');
@@ -18,23 +8,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 function leer(tipo, id) {
   firebase.database().ref(tipo).once('value').then(function(snapshot){
-       snapshot = snapshot.val();
-       let arrk = Object.keys(snapshot);
        for (var i = 0; i < arrk.length; i++) {
                  document.getElementById(id).innerHTML += '<option>' + arrk[i] + '</option>';
        }
-  });
-}
-
-function intermediario(tipo) {
-  id = usr;
-  firebase.database().ref('/usuarios/'+ id + '/numeroDe' +tipo+ '/').once('value').then(function(snapshot){
-      if(tipo==='reserva'){
-        console.log(snapshot.val());
-        reservar(id,snapshot.val())
-      } else if (tipo==='prestamo') {
-
-      }
   });
 }
 
@@ -72,7 +48,7 @@ function prestar() {
   updates['/objetos/'] = {
     Guitarra : 0
   };
-  
+
   firebase.database().ref().update(updates);
 }
 
@@ -88,3 +64,4 @@ function cargarUsr() {
     i++;
   }
 }
+**/
