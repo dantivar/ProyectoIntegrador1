@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+          <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+          <script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
+          <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+          <script type="text/javascript" src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+          <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+          <link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+          <link rel="stylesheet" href="style.css">
+          <script src="pp-app.js"></script>
+          <title>RIMA</title>
+     </head>
+     <body style="overflow: hidden;">
+          <div id="mySidenav" class="sidenav">
+            <a href="/reserva">Reservas</a>
+            <a href="/prestamo">Prestamos</a>
+            <a href="/vreserva">Ver reservas</a>
+            <a href="/vprestamo">Ver prestamos</a>
+          </div>
+       <div class="container" style="display: block;">
+         <form action="/prestamo" method="post">
+           <div class="row justify-content-md-center topx">
+             <div class="col-md-3">
+             <div class="form-group">
+                 <div class="input-group date" id="datetimepicker2">
+                     <input type="text" class="form-control" name="pdt"/>
+                     <span class="input-group-addon">
+                         <span class="glyphicon glyphicon-time"></span>
+                     </span>
+                 </div>
+             </div>
+            </div>
+            <div class="col-md-3">
+                 <select class="selectpicker" data-style="btn-primary" name="sel2">
+                   <option value="1">Guitarra</option>
+                   <option value="3">Banjo</option>
+                   </select>
+            </div>
+       </div>
+       <div class="row justify-content-md-center">
+         <button type="submit" class="btn btn-primary" id="btn3">Prestar</button>
+       </div>
+         </form>
+       </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#datetimepicker2').datetimepicker({ format : 'HH:mm'});
+      });
+  </script>
+     </body>
+</html>

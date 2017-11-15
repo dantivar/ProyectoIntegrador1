@@ -44,7 +44,7 @@ var sessionChecker = (req, res, next) => {
         next();
     }
 };
-var logged = false;
+
 //set port
 var port = process.env.PORT || 8000;
 
@@ -64,42 +64,48 @@ app.route('/login')
     let usr = req.body.usr;
     let pwd = req.body.pwd;
 
-    User.findOne({attributes: ['usr'], where:{usr:usr, pwd:pwd}}).then((user) =>{
+    User.findOne({attributes: ['usr','id_usr']}).then((user) =>{
       if (!user) {
         res.redirect('/login');
       } else {
         req.session.user = user.dataValues;
-        res.redirect('/home');
+        res.redirect('/reserva');
       }
     });
   });
 
-app.get('/home', (req, res) =>{
-  res.sendFile(__dirname + '/public/pp-app.html');
+app.route('/reserva')
+  .get((req, res) =>{
+    res.sendFile(__dirname + '/public/reserva.html');
+  })
+  .post((req, res) =>{
+    let qtext = 'INSERT INTO reserva VALUES($1,$2::timestamp + interval \'1 hour\',$3,$4);';
+    client.query(qtext, [req.body.rdt, req.body.rdt, req.body.sel1, req.session.user.id_usr], (err, resp) =>{
+      if(err) throw err;
+      res.redirect('/vreserva');
+    });
+  });
+
+app.route('/prestamo')
+  .get((req, res) =>{
+  res.sendFile(__dirname + '/public/prestamo.html');
+  })
+  .post((req, res) =>{
+    let qtext = 'INSERT INTO prestamo VALUES($1,$2::time + interval \'1 hour\',$3,$4);';
+    client.query(qtext, [req.body.pdt, req.body.pdt, req.body.sel2, req.session.user.id_usr], (err, resp) =>{
+      if(err) throw err;
+      res.redirect('/vprestamo');
+    });
+  });
+
+app.get('/vreserva', (req, res) =>{
+  res.sendFile(__dirname + '/public/vreserva.html');
+});
+
+app.get('/vprestamo', (req, res) =>{
+  res.sendFile(__dirname + '/public/vprestamo.html');
 });
 
 app.listen(port, function(){
   console.log("app running");
 });
-
-function findUsr(usr,pwd) {
-  client.query('SELECT usr FROM usuario;', (err, res) => {
-    if (err) throw err;
-    for (let row of res.rows) {
-      if (row.usr===usr) {
-        validarPwd(usr,pwd);
-      }
-    }
-  });
-  return usr;
-}
-
-function validarPwd(usr,pwd) {
-  let qtext = 'SELECT pwd FROM usuario WHERE usr=$1';
-  client.query(qtext, [usr],(err, res) => {
-    if(err) throw err;
-    if (pwd===res.rows[0].pwd) {
-      logged = true;
-    }
-  });
-}
