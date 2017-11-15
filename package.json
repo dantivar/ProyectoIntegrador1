@@ -1,12 +1,18 @@
 {
-  "name" : "rima",
-  "version" : "2.0.0",
-  "scripts" : {
-    "start" : "node server.js"
+  "name": "rima",
+  "version": "2.0.0",
+  "scripts": {
+    "start": "node server.js"
   },
-  "dependencies" : {
-    "express" : "4.16.2",
-    "pg" : "7.4.0"
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "4.16.2",
+    "pg": "7.4.0",
+    "sequelize" : "4.22.6",
+    "cookie-parser" : "1.4.3",
+    "express-session" : "1.15.6"
   },
-  "author" : "Duvan Antivar"
+  "author": "Duvan Antivar",
+  "repository": "https://github.com/dantivar/ProyectoIntegrador1",
+  "description": "Aplicacion web para reservar aulas e intrumentos"
 }

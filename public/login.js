@@ -35,30 +35,3 @@ $(window, document, undefined).ready(function() {
   });
 
 });
-
-/**
-document.getElementById('btn1').addEventListener("click", function () {
-  let usr = document.getElementById('usr').value;
-  let pwd = document.getElementById('pwd').value;
-  const auth = firebase.auth();
-  firebase.auth().signInWithEmailAndPassword(usr, pwd)
-  .then(function(user){
-       redirigir("pp-app.html",usr);
-  }).catch(function(error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-
-      if (errorCode === 'auth/wrong-password') {
-         alert('Wrong password.');
-      } else {
-         alert(errorMessage);
-      }
-      console.log(error);
-  });
-});
-
-function redirigir(page, packed) {
-     window.location.replace(page);
-     window.location = page + "?" + packed;
-}
-**/

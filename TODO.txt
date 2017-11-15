@@ -1,0 +1,9 @@
+1-Desactivar horas y fechas.
+2-Ver reservas de toda la comunidad: admin.
+3-Restringir horas en las cuales se pueden hacer reservas o prestamos
+  e.g solo horas en punto
+4- Botón reservar se convierte en consultar y luego sale un mensaje emergente el
+  cual dice: "Aula(Objeto) no disponible en el horario seleccionado" o dice:
+  "Confirmar <<datos de la seleccion de aula(objeto) que esta por hacer"
+  El primero trae solo una opción regresar o aceptar, el segundo una opción confirmar
+  o cancelar.
